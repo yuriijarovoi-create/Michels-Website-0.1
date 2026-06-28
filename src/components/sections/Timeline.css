@@ -1,0 +1,117 @@
+.timeline-section {
+  padding: var(--section-padding) 0;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline__line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--color-blue) 10%,
+    var(--color-blue) 90%,
+    transparent
+  );
+  transform: translateX(-50%);
+}
+
+.timeline__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.timeline__item--left {
+  flex-direction: row-reverse;
+  padding-right: calc(50% + 2rem);
+}
+
+.timeline__item--right {
+  padding-left: calc(50% + 2rem);
+}
+
+.timeline__dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.timeline__dot span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  background: var(--color-white);
+  border: 3px solid var(--color-blue);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  box-shadow: 0 4px 20px var(--color-blue-glow);
+}
+
+.timeline__card {
+  background: var(--color-white);
+  padding: 1.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.4s var(--transition-smooth);
+}
+
+.timeline__item:hover .timeline__card {
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px);
+}
+
+.timeline__title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.timeline__desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .timeline__line {
+    left: 36px;
+  }
+
+  .timeline__item,
+  .timeline__item--left,
+  .timeline__item--right {
+    flex-direction: row;
+    padding-left: 5rem;
+    padding-right: 0;
+  }
+
+  .timeline__dot {
+    left: 36px;
+  }
+
+  .timeline__dot span {
+    width: 56px;
+    height: 56px;
+    font-size: 0.6875rem;
+  }
+}

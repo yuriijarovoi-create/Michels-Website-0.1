@@ -1,0 +1,35 @@
+.section-header {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-header--center {
+  text-align: center;
+}
+
+.section-header--center .section-label {
+  justify-content: center;
+}
+
+.section-header--center .section-label::before {
+  display: none;
+}
+
+.section-header--center .section-subtitle {
+  margin-inline: auto;
+}
+
+.section-label--light {
+  color: var(--color-blue-bright);
+}
+
+.section-label--light::before {
+  background: var(--color-blue-bright);
+}
+
+.section-title--light {
+  color: var(--color-white);
+}
+
+.section-subtitle--light {
+  color: var(--color-silver);
+}

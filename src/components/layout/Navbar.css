@@ -1,0 +1,219 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  transition: all 0.4s var(--transition-smooth);
+}
+
+.navbar--scrolled {
+  background: rgba(5, 13, 26, 0.75);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 2rem;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.navbar__logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-bright) 100%);
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-white);
+  box-shadow: 0 4px 16px var(--color-blue-glow);
+}
+
+.navbar__logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.navbar__logo-text strong {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.navbar__logo-text small {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--color-silver);
+  letter-spacing: 0.02em;
+}
+
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar__link {
+  position: relative;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.3s ease;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-blue-bright);
+  transition: width 0.3s var(--transition-smooth);
+}
+
+.navbar__link:hover {
+  color: var(--color-white);
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.navbar__phone {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-silver-light);
+  transition: color 0.3s ease;
+}
+
+.navbar__phone:hover {
+  color: var(--color-white);
+}
+
+.navbar__cta {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.8125rem;
+}
+
+.navbar__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+}
+
+.navbar__burger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navbar__burger--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__burger--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__burger--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(5, 13, 26, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.mobile-menu__nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(320px, 85vw);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--nav-height) + 2rem) 2rem 2rem;
+  background: var(--color-navy);
+  border-left: 1px solid var(--glass-border);
+}
+
+.mobile-menu__link {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-white);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mobile-menu__cta {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.mobile-menu__phone {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--color-silver);
+}
+
+@media (max-width: 1024px) {
+  .navbar__nav,
+  .navbar__phone {
+    display: none;
+  }
+
+  .navbar__burger {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__cta {
+    display: none;
+  }
+
+  .navbar__logo-text small {
+    display: none;
+  }
+}
