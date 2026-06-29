@@ -7,7 +7,7 @@ export default function Stats() {
   return (
     <section className="stats">
       <div className="stats__bg" aria-hidden="true" />
-      <div className="container">
+      <div className="container stats__container">
         <div className="stats__grid">
           {stats.map((stat, index) => (
             <motion.div
