@@ -75,18 +75,21 @@
 
 @media (max-width: 480px) {
   .stats {
-    padding: 2rem 0;
+    overflow: visible;
   }
 
   .stats__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.6rem;
-    width: 96%;
-    margin: 0;
+    width: 100%;
+    transform: none;
+    margin: 0 auto;
+    gap: 0.2rem;
   }
 
   .stats__value {
     font-size: 2.2rem;
+    transform: scaleX(0.88);
+  transform-origin: center;
   }
 
   .stats__label {
@@ -96,6 +99,7 @@
 
   .stats__item {
     padding: 0.9rem 0.1rem;
+    overflow: visible;
   }
 
   .stats__item::after {
