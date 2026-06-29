@@ -43,9 +43,13 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          Perfekte Karosserie- &
-          <br />
-          <span className="hero__title-accent">Lackierarbeiten in Cochem</span>
+         Perfekte
+<br />
+Karosserie - &nbsp;&amp;
+<br />
+<span className="hero__title-accent">Lackierarbeiten</span>
+<br />
+in <span className="hero__title-accent">Cochem</span>
         </motion.h1>
 
         <motion.p
